@@ -1,11 +1,12 @@
-import React from 'react';
+import React ,{ useEffect }from 'react';
 import Slide from './Slide';
 import { Box, makeStyles } from '@material-ui/core';
-import { products } from '../../constants/product';
 import Banner from './Banner';
 import MidSlide from './MidSlide';
 import MidSection from './MidSection';
 import NavBar from './NavBar';
+import { useSelector, useDispatch } from 'react-redux'; // hooks
+import { getProducts as listProducts } from '../redux/actions/productActions';
 
 const useStyle = makeStyles({
   component: {
@@ -14,8 +15,19 @@ const useStyle = makeStyles({
   }
 })
 
+
+
 const Home = () => {
   const classes = useStyle();
+  const getProducts = useSelector(state => state.getProducts);
+const { products, error } = getProducts;
+
+const dispatch = useDispatch();
+
+useEffect(() => {
+    dispatch(listProducts())
+}, [dispatch])
+
   return(
       <div>
         <NavBar/>
