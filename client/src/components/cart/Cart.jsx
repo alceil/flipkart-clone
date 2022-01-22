@@ -5,8 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '../../redux/actions/cartActions';
 import TotalView from './TotalView';
 import EmptyCart from './EmptyCart';
-import { post } from '../../utils/paytm';
-import { payUsingPaytm } from '../../service/api';
 
 const useStyle = makeStyles(theme => ({
     component: {
@@ -63,14 +61,6 @@ const Cart = ({ match, history }) => {
         dispatch(removeFromCart(id));
     }
 
-    const buyNow = async () => {
-        let response = await payUsingPaytm({ amount: 500, email: 'codeforinterview01@gmail.com'});
-        var information = {
-            action: 'https://securegw-stage.paytm.in/order/process',
-            params: response    
-        }
-        post(information);
-    }
 
     return (
         <>
@@ -85,7 +75,7 @@ const Cart = ({ match, history }) => {
                             ))
                         }
                     <Box className={classes.bottom}>
-                        <Button onClick={() => buyNow()} variant="contained" className={classes.placeOrder}>Place Order</Button>
+                        <Button variant="contained" className={classes.placeOrder}>Place Order</Button>
                     </Box>
                 </Grid>
                 <Grid item lg={3} md={3} sm={12} xs={12}>
