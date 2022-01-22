@@ -3,6 +3,8 @@ import Slide from './Slide';
 import { Box, makeStyles } from '@material-ui/core';
 import { products } from '../../constants/product';
 import Banner from './Banner';
+import MidSlide from './MidSlide';
+import MidSection from './MidSection';
 import NavBar from './NavBar';
 
 const useStyle = makeStyles({
@@ -19,8 +21,8 @@ const Home = () => {
         <NavBar/>
         <Box className={classes.component}>
                 <Banner />
-                {/* <MidSlide products={products} /> */}
-                {/* <MidSection /> */}
+                <MidSlide products={products} />
+                <MidSection />
                 <Slide
                     data={products} 
                     title='Discounts for You'
