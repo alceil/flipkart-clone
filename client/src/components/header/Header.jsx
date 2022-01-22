@@ -96,10 +96,10 @@ const Header = () => {
                 </Drawer>
 
                 <Link to='/' className={classes.component}>
-                    <img alt='' src={logoURL} className={classes.logo} />
+                    <img src={logoURL} className={classes.logo} />
                     <Box component="span" className={classes.container}>
                         <Typography className = {classes.subHeading}>Explore <Box component="span" style={{color:'#FFE500'}}>Plus</Box></Typography>
-                        <img alt='' src={subURL} className={classes.subURL} />
+                        <img src={subURL} className={classes.subURL} />
                     </Box>
                 </Link>
                 <Search />

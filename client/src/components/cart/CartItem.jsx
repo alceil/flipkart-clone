@@ -1,5 +1,5 @@
 import { Card, makeStyles, Box, Typography, Button } from '@material-ui/core';
-import { addEllipsis } from '../../utils/util';
+import { addEllipsis } from '../../utils/utils';
 import clsx from 'clsx';
 import GroupButton from './GroupButton';
 

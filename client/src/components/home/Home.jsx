@@ -6,7 +6,7 @@ import MidSlide from './MidSlide';
 import MidSection from './MidSection';
 import NavBar from './NavBar';
 import { useSelector, useDispatch } from 'react-redux'; // hooks
-import { getProducts as listProducts } from '../redux/actions/productActions';
+import { getProducts as listProducts } from '../../redux/actions/productActions';
 
 const useStyle = makeStyles({
   component: {

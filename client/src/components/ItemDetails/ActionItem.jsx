@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import { useHistory } from 'react-router-dom';
 import { LoginContext } from '../../context/ContextProvider';
 import { payUsingPaytm } from '../../service/api';
-import { post } from '../../utils/paytm';
 // import { initialState, reducer } from '../../reducers/reducer';
 import { addToCart } from '../../redux/actions/cartActions';
 import { useSelector, useDispatch } from 'react-redux';
@@ -48,14 +47,6 @@ const ActionItem = ({ product }) => {
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
 
-    const buyNow = async () => {
-        let response = await payUsingPaytm({ amount: 500, email: 'codeforinterview01@gmail.com'});
-        var information = {
-            action: 'https://securegw-stage.paytm.in/order/process',
-            params: response    
-        }
-        post(information);
-    }
 
     const addItemToCart = () => {
         dispatch(addToCart(id, quantity));
@@ -66,7 +57,7 @@ const ActionItem = ({ product }) => {
         <Box className={classes.leftContainer}>
             <img alt='' src={product.detailUrl} className={classes.productImage} /><br />
             <Button onClick={() => addItemToCart()} className={clsx(classes.button, classes.addToCart)} style={{marginRight: 10}} variant="contained"><Cart />Add to Cart</Button>
-            <Button onClick={() => buyNow()} className={clsx(classes.button, classes.buyNow)} variant="contained"><Flash /> Buy Now</Button>
+            <Button  className={clsx(classes.button, classes.buyNow)} variant="contained"><Flash /> Buy Now</Button>
         </Box>
     )
 }

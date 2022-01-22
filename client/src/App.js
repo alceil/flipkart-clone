@@ -1,5 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { NotFound } from './components/default';
+import NotFound  from './components/NotFound';
 import Home  from './components/home/Home';
 import Header from './components/header/Header';
 import DetailView from './components/ItemDetails/DetailView';
@@ -10,8 +10,10 @@ import { Box } from '@material-ui/core'
 
 function App() {
   return (
+ 
     <TemplateProvider>
       <ContextProvider>
+           <Header />
         <BrowserRouter>
           <Header />
           <Box style={{marginTop: 54}}>
