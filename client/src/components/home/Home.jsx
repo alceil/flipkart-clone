@@ -1,11 +1,12 @@
 import React from 'react';
-import Banner from './Banner';
+// import Banner from './Banner';
 import NavBar from './NavBar';
 const Home = () => {
   return(
       <div>
         <NavBar/>
-<Banner/>
+        helllo borld
+{/* <Banner/> */}
       </div>
       )
 };
